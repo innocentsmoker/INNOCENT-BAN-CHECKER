@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, viewport-fit=cover" />
+<meta name="theme-color" content="#07070A" />
+<meta name="description" content="Check WhatsApp number status via authorized verification services. A Sir Innocent Tech product." />
+<title>⚡ Sir Innocent Ban Checker — WhatsApp Number Status Checker</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   ⚡ SIR INNOCENT BAN CHECKER — Styles
+   ============================================================ */
+:root {
+  --gold: #F5C542;
+  --gold-soft: #FFD979;
+  --emerald: #10B981;
+  --emerald-deep: #059669;
+  --purple: #7C3AED;
+  --purple-deep: #5B21B6;
+  --ink: #07070A;
+  --charcoal: #0F1015;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--ink);
+  color: #E9E9F0;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  min-height: 100dvh;
+  background:
+    radial-gradient(1200px 600px at 15% -10%, rgba(124,58,237,0.18), transparent 60%),
+    radial-gradient(1000px 500px at 90% 10%, rgba(16,185,129,0.12), transparent 60%),
+    radial-gradient(900px 600px at 50% 110%, rgba(245,197,66,0.10), transparent 60%),
+    var(--ink);
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* ---------- Light drops background ---------- */
+.lightning-bg {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+.drop {
+  position: absolute;
+  top: -12vh;
+  width: 2px;
+  border-radius: 2px;
+  background: linear-gradient(180deg, transparent, rgba(245,197,66,0.9), transparent);
+  filter: drop-shadow(0 0 6px rgba(245,197,66,0.85));
+  opacity: 0;
+  animation-name: fall;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  will-change: transform, opacity;
+}
+.drop.purple {
+  background: linear-gradient(180deg, transparent, rgba(124,58,237,0.95), transparent);
+  filter: drop-shadow(0 0 6px rgba(124,58,237,0.9));
+}
+.drop.green {
+  background: linear-gradient(180deg, transparent, rgba(16,185,129,0.95), transparent);
+  filter: drop-shadow(0 0 6px rgba(16,185,129,0.9));
+}
+@keyframes fall {
+  0%   { transform: translateY(-12vh); opacity: 0; }
+  10%  { opacity: 0.9; }
+  100% { transform: translateY(120vh); opacity: 0; }
+}
+.bg-glow {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(80px);
+}
+.bg-glow.p { top: -8rem; left: -6rem; width: 18rem; height: 18rem; background: rgba(124,58,237,0.20); }
+.bg-glow.g { top: 33%; right: -6rem; width: 18rem; height: 18rem; background: rgba(16,185,129,0.15); }
+.bg-glow.y { bottom: -8rem; left: 33%; width: 18rem; height: 18rem; background: rgba(245,197,66,0.10); }
+
+/* ---------- Layout ---------- */
+.page {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 16px;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------- Header ---------- */
+.header {
+  padding-top: 32px;
+  padding-bottom: 16px;
+  text-align: center;
+  animation: fadeUp 0.6s ease-out both;
+}
+.header h1 {
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-size: clamp(1.25rem, 5.5vw, 2rem);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin: 0;
+  line-height: 1.2;
+}
+.text-gradient {
+  background: linear-gradient(90deg, var(--gold) 0%, var(--emerald) 50%, var(--purple) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.header .sub {
+  margin: 8px 0 0;
+  font-size: 14px;
+  color: rgba(255,255,255,0.7);
+}
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  border: 1px solid rgba(245,197,66,0.4);
+  background: rgba(245,197,66,0.10);
+  color: var(--gold);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+}
+.badge .dot {
+  width: 6px; height: 6px; border-radius: 9999px;
+  background: var(--gold);
+  box-shadow: 0 0 8px var(--gold);
+  animation: pulse 1.6s ease-in-out infinite;
+}
+@keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
+
+/* ---------- Glass card ---------- */
+.glass {
+  background: linear-gradient(180deg, rgba(255,255,255,0.045), rgba(255,255,255,0.015));
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 22px;
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.55),
+    inset 0 1px 0 rgba(255,255,255,0.06);
+  position: relative;
+}
+.glass-border-glow::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: 24px;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(245,197,66,0.55), rgba(16,185,129,0.5), rgba(124,58,237,0.6));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  pointer-events: none;
+}
+
+.checker {
+  margin: 8px 0 0;
+  padding: 20px;
+  animation: fadeUp 0.7s ease-out 0.05s both;
+}
+@media (min-width: 480px) { .checker { padding: 28px; } }
+
+.checker-title {
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+  margin: 0;
+  color: #fff;
+}
+@media (min-width: 480px) { .checker-title { font-size: 22px; } }
+.checker-desc {
+  text-align: center;
+  font-size: 13.5px;
+  margin: 6px 0 0;
+  color: rgba(255,255,255,0.65);
+}
+
+/* ---------- Form ---------- */
+form { margin-top: 22px; }
+.field-label {
+  display: block;
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 6px;
+}
+.input-base {
+  width: 100%;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.10);
+  color: #F2F2F7;
+  border-radius: 14px;
+  padding: 14px 16px;
+  font-size: 16px; /* prevent iOS zoom */
+  font-family: inherit;
+  transition: border-color .2s, box-shadow .2s, background .2s;
+  appearance: none;
+  -webkit-appearance: none;
+}
+.input-base:focus {
+  outline: none;
+  border-color: rgba(245,197,66,0.55);
+  box-shadow: 0 0 0 3px rgba(245,197,66,0.15);
+  background: rgba(255,255,255,0.05);
+}
+.input-base::placeholder { color: rgba(255,255,255,0.35); }
+
+.select-wrap { position: relative; }
+.select-wrap .chevron {
+  pointer-events: none;
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgba(255,255,255,0.5);
+  font-size: 12px;
+}
+
+.phone-row {
+  display: flex;
+  gap: 8px;
+  align-items: stretch;
+}
+.dial-chip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  min-width: 92px;
+  padding: 0 12px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(255,255,255,0.05);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--gold);
+  white-space: nowrap;
+}
+.phone-row .input-base { flex: 1; min-width: 0; }
+
+.hint {
+  min-height: 18px;
+  margin-top: 6px;
+  font-size: 12px;
+  color: rgba(255,255,255,0.5);
+}
+.hint.ok { color: var(--emerald); }
+
+.error {
+  display: none;
+  margin-top: 10px;
+  padding: 8px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(239,68,68,0.4);
+  background: rgba(239,68,68,0.10);
+  color: #fca5a5;
+  font-size: 13px;
+}
+.error.show { display: block; }
+
+/* ---------- Check button ---------- */
+.btn-check {
+  position: relative;
+  display: block;
+  width: 100%;
+  margin-top: 18px;
+  padding: 16px 20px;
+  border: none;
+  border-radius: 16px;
+  background: linear-gradient(90deg, var(--gold) 0%, var(--emerald) 55%, var(--purple) 100%);
+  color: #0B0B0F;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  transition: transform .18s ease, box-shadow .3s ease;
+  animation: glowPulse 3s ease-in-out infinite;
+  touch-action: manipulation;
+}
+@media (min-width: 480px) { .btn-check { font-size: 17px; padding: 18px 24px; } }
+.btn-check:hover, .btn-check:focus-visible {
+  transform: translateY(-1px);
+  box-shadow:
+    0 0 22px rgba(245,197,66,0.55),
+    0 0 44px rgba(16,185,129,0.35),
+    0 0 60px rgba(124,58,237,0.35);
+  outline: none;
+}
+.btn-check:active { transform: translateY(0) scale(0.99); }
+.btn-check:disabled { opacity: 0.55; cursor: not-allowed; animation: none; }
+
+@keyframes glowPulse {
+  0%,100% { box-shadow: 0 0 18px rgba(245,197,66,0.55), 0 0 40px rgba(16,185,129,0.35); }
+  50%     { box-shadow: 0 0 28px rgba(124,58,237,0.65), 0 0 60px rgba(16,185,129,0.45); }
+}
+
+/* ---------- Scanner ---------- */
+.scanner {
+  position: relative;
+  overflow: hidden;
+  margin-top: 22px;
+  height: 224px;
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.scanner-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 40%;
+  background: linear-gradient(180deg, transparent, rgba(16,185,129,0.55), transparent);
+  filter: blur(4px);
+  animation: scan 2s linear infinite;
+}
+@keyframes scan {
+  0%   { transform: translateY(-100%); }
+  100% { transform: translateY(300%); }
+}
+
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 9999px;
+  animation: glowPulse 1.6s ease-in-out infinite;
+}
+
+.ring-wrap {
+  position: relative;
+  width: 112px;
+  height: 112px;
+}
+.ring-wrap svg { position: absolute; inset: 0; transform: rotate(-90deg); }
+.ring-track { stroke: rgba(255,255,255,0.08); }
+.ring-arc {
+  stroke: url(#ringGrad);
+  stroke-width: 6;
+  stroke-linecap: round;
+  fill: none;
+  stroke-dasharray: 264;
+  stroke-dashoffset: 80;
+  transform-origin: 50% 50%;
+  animation: spinSlow 1.6s linear infinite;
+}
+@keyframes spinSlow { to { transform: rotate(360deg); } }
+
+.ring-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.ring-content .lbl {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.6);
+}
+.ring-content .val {
+  margin-top: 4px;
+  font-size: 13px;
+  font-weight: 600;
+  background: linear-gradient(90deg, var(--gold), var(--emerald), var(--purple));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.scanning-num {
+  text-align: center;
+  font-size: 12px;
+  color: rgba(255,255,255,0.5);
+  margin: 10px 0 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ---------- Result ---------- */
+.result {
+  margin-top: 6px;
+  padding: 20px;
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,0.10);
+  text-align: center;
+  animation: fadeUp 0.5s ease-out both;
+}
+.result .emoji { font-size: 40px; line-height: 1; }
+.result .label {
+  margin-top: 8px;
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+.result .line { margin-top: 12px; font-size: 13.5px; color: rgba(255,255,255,0.75); }
+.result .meta {
+  margin-top: 14px;
+  font-size: 12px;
+  color: rgba(255,255,255,0.5);
+  word-break: break-all;
+}
+.result .disclaimer {
+  margin-top: 14px;
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: rgba(0,0,0,0.3);
+  border: 1px solid rgba(255,255,255,0.08);
+  font-size: 11px;
+  line-height: 1.5;
+  color: rgba(255,255,255,0.55);
+}
+.result.restricted {
+  background: rgba(239,68,68,0.10);
+  box-shadow: inset 0 0 0 1px rgba(239,68,68,0.35);
+}
+.result.restricted .label { color: #fca5a5; }
+.result.restricted .eliminated {
+  margin-top: 16px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(239,68,68,0.30);
+  background: rgba(0,0,0,0.30);
+  color: #fca5a5;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+.result.available {
+  background: rgba(16,185,129,0.10);
+  box-shadow: inset 0 0 0 1px rgba(16,185,129,0.35);
+}
+.result.available .label { color: var(--emerald); }
+.result.unverified {
+  background: rgba(245,197,66,0.10);
+  box-shadow: inset 0 0 0 1px rgba(245,197,66,0.35);
+}
+.result.unverified .label { color: var(--gold); }
+
+.btn-secondary {
+  display: block;
+  width: 100%;
+  margin-top: 16px;
+  padding: 12px 16px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(255,255,255,0.05);
+  color: rgba(255,255,255,0.85);
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background .2s;
+}
+.btn-secondary:hover { background: rgba(255,255,255,0.10); }
+
+/* ---------- History ---------- */
+.section {
+  margin-top: 24px;
+  padding: 20px;
+  animation: fadeUp 0.7s ease-out 0.15s both;
+}
+.section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.section-title {
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  margin: 0;
+  color: #fff;
+}
+.btn-clear {
+  padding: 4px 12px;
+  border-radius: 9999px;
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(255,255,255,0.05);
+  color: rgba(255,255,255,0.7);
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background .2s;
+}
+.btn-clear:hover { background: rgba(255,255,255,0.10); }
+
+.history-empty {
+  margin: 16px 0 0;
+  font-size: 13.5px;
+  color: rgba(255,255,255,0.45);
+}
+.history-list {
+  list-style: none;
+  margin: 16px 0 0;
+  padding: 0;
+}
+.history-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 0;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+.history-list li:first-child { border-top: none; }
+.h-row { display: flex; align-items: center; gap: 12px; min-width: 0; }
+.h-emoji { font-size: 18px; flex-shrink: 0; }
+.h-num { font-size: 14px; font-weight: 500; color: rgba(255,255,255,0.9); }
+.h-time { font-size: 11.5px; color: rgba(255,255,255,0.45); margin-top: 2px; }
+.h-status { font-size: 12px; font-weight: 600; flex-shrink: 0; }
+.h-status.restricted { color: #fca5a5; }
+.h-status.available { color: var(--emerald); }
+.h-status.unverified { color: var(--gold); }
+
+.history-note {
+  margin-top: 14px;
+  font-size: 11px;
+  color: rgba(255,255,255,0.4);
+}
+
+/* ---------- Privacy ---------- */
+.privacy-list {
+  list-style: none;
+  margin: 14px 0 0;
+  padding: 0;
+  font-size: 13.5px;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.7;
+}
+.privacy-list li { padding-left: 16px; position: relative; }
+.privacy-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+}
+
+/* ---------- Footer ---------- */
+.footer {
+  margin-top: 40px;
+  margin-bottom: 32px;
+  padding-bottom: env(safe-area-inset-bottom);
+  text-align: center;
+  font-size: 13px;
+  color: rgba(255,255,255,0.55);
+}
+.footer .inner {
+  padding: 20px;
+  border-radius: 18px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.045), rgba(255,255,255,0.015));
+  border: 1px solid rgba(255,255,255,0.08);
+}
+.footer .brand {
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-weight: 600;
+  color: rgba(255,255,255,0.85);
+}
+.footer .built { margin-top: 4px; }
+.footer .links {
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  color: rgba(255,255,255,0.6);
+}
+.footer .links a {
+  color: inherit;
+  text-decoration: none;
+  transition: color .2s;
+}
+.footer .links a:hover { color: var(--gold); }
+.footer .links span { color: rgba(255,255,255,0.2); }
+
+/* ---------- Animations ---------- */
+@keyframes fadeUp {
+  0%   { opacity: 0; transform: translateY(12px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.hidden { display: none !important; }
+
+@media (prefers-reduced-motion: reduce) {
+  .drop, .scanner-line, .btn-check, .ring-arc, .badge .dot, .particle {
+    animation: none !important;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- ================= LIGHTNING BACKGROUND ================= -->
+<div class="lightning-bg" aria-hidden="true">
+  <div class="bg-glow p"></div>
+  <div class="bg-glow g"></div>
+  <div class="bg-glow y"></div>
+  <!-- Light drops are injected by JS -->
+</div>
+
+<!-- ================= PAGE ================= -->
+<div class="page">
+
+  <!-- ============ HEADER ============ -->
+  <header class="header">
+    <h1>⚡ <span class="text-gradient">SIR INNOCENT BAN CHECKER</span></h1>
+    <p class="sub">WhatsApp Number Status Checker</p>
+    <div class="badge"><span class="dot"></span>SIR INNOCENT TECH</div>
+  </header>
+
+  <!-- ============ CHECKER CARD ============ -->
+  <section class="glass glass-border-glow checker">
+    <h2 class="checker-title">Check WhatsApp Number</h2>
+    <p class="checker-desc">Enter a WhatsApp phone number to check its available account status.</p>
+
+    <form id="checkForm" novalidate>
+      <div>
+        <label class="field-label" for="countrySelect">Country</label>
+        <div class="select-wrap">
+          <select id="countrySelect" class="input-base"></select>
+          <span class="chevron">▾</span>
+        </div>
+      </div>
+
+      <div style="margin-top: 14px;">
+        <label class="field-label" for="phoneInput">Phone Number</label>
+        <div class="phone-row">
+          <div class="dial-chip" id="dialChip">🇰🇪 +254</div>
+          <input id="phoneInput" class="input-base" type="tel" inputmode="numeric" autocomplete="tel" placeholder="Enter phone number" />
+        </div>
+        <div class="hint" id="hint"></div>
+      </div>
+
+      <div class="error" id="errorBox"></div>
+
+      <button type="submit" class="btn-check" id="checkBtn">🔍 CHECK NUMBER</button>
+    </form>
+
+    <!-- Checking panel -->
+    <div id="checkingPanel" class="hidden">
+      <div class="scanner">
+        <div class="scanner-line"></div>
+        <div id="particles"></div>
+
+        <div class="ring-wrap">
+          <svg viewBox="0 0 100 100">
+            <defs>
+              <linearGradient id="ringGrad" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#F5C542"/>
+                <stop offset="50%" stop-color="#10B981"/>
+                <stop offset="100%" stop-color="#7C3AED"/>
+              </linearGradient>
+            </defs>
+            <circle class="ring-track" cx="50" cy="50" r="42" stroke-width="6" fill="none"/>
+            <circle class="ring-arc" cx="50" cy="50" r="42"/>
+          </svg>
+          <div class="ring-content">
+            <span class="lbl">Scanning</span>
+            <span class="val">Checking number…</span>
+          </div>
+        </div>
+      </div>
+      <p class="scanning-num" id="scanningNum"></p>
+    </div>
+
+    <!-- Result panel -->
+    <div id="resultPanel" class="hidden"></div>
+  </section>
+
+  <!-- ============ HISTORY ============ -->
+  <section class="glass section">
+    <div class="section-head">
+      <h3 class="section-title">Recent Checks</h3>
+      <button class="btn-clear hidden" id="clearHistoryBtn" type="button">Clear</button>
+    </div>
+    <p class="history-empty" id="historyEmpty">No checks yet. Numbers you check will appear here for this session only.</p>
+    <ul class="history-list hidden" id="historyList"></ul>
+    <p class="history-note">History is stored in this browser tab only and is cleared when you close it.</p>
+  </section>
+
+  <!-- ============ PRIVACY ============ -->
+  <section class="glass section" id="privacy">
+    <h3 class="section-title">🔒 Privacy First</h3>
+    <ul class="privacy-list">
+      <li>We do not claim access to private WhatsApp account information.</li>
+      <li>Number verification is performed only through authorized services configured by the site owner.</li>
+      <li>No unnecessary personal information is collected.</li>
+      <li>API keys never leave the server; nothing sensitive is exposed to the browser.</li>
+      <li>Rate limiting and basic abuse protection are enforced on the backend.</li>
+    </ul>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="inner">
+      <div class="brand">© 2026 SIR INNOCENT TECH</div>
+      <div class="built">Built with ⚡ technology</div>
+      <div class="links">
+        <a href="#privacy">Privacy</a>
+        <span>•</span>
+        <a href="#terms">Terms</a>
+        <span>•</span>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<!-- ============================================================
+     ⚡ APP LOGIC
+     ============================================================ -->
+<script>
+(function () {
+  'use strict';
+
+  /* ---------- Constants ---------- */
+  const COUNTRIES = [
+    { code: 'KE', name: 'Kenya',        dial: '+254', flag: '🇰🇪', example: '712345678'   },
+    { code: 'NG', name: 'Nigeria',      dial: '+234', flag: '🇳🇬', example: '8012345678'  },
+    { code: 'TZ', name: 'Tanzania',     dial: '+255', flag: '🇹🇿', example: '712345678'   },
+    { code: 'UG', name: 'Uganda',       dial: '+256', flag: '🇺🇬', example: '712345678'   },
+    { code: 'ZA', name: 'South Africa', dial: '+27',  flag: '🇿🇦', example: '712345678'   },
+    { code: 'GH', name: 'Ghana',        dial: '+233', flag: '🇬🇭', example: '241234567'   },
+    { code: 'US', name: 'United States',dial: '+1',   flag: '🇺🇸', example: '2025550123'  },
+    { code: 'GB', name: 'United Kingdom',dial: '+44', flag: '🇬🇧', example: '7400123456'  },
+    { code: 'IN', name: 'India',        dial: '+91',  flag: '🇮🇳', example: '9876543210'  },
+    { code: 'AE', name: 'UAE',          dial: '+971', flag: '🇦🇪', example: '501234567'   },
+    { code: 'DE', name: 'Germany',      dial: '+49',  flag: '🇩🇪', example: '15123456789' },
+    { code: 'FR', name: 'France',       dial: '+33',  flag: '🇫🇷', example: '612345678'   },
+    { code: 'BR', name: 'Brazil',       dial: '+55',  flag: '🇧🇷', example: '11912345678' },
+    { code: 'CN', name: 'China',        dial: '+86',  flag: '🇨🇳', example: '13800138000' },
+    { code: 'PK', name: 'Pakistan',     dial: '+92',  flag: '🇵🇰', example: '3001234567'  }
+  ];
+
+  const E164_RE = /^\+[1-9]\d{7,14}$/;
+
+  const STATUS_META = {
+    restricted: {
+      emoji: '🔴',
+      label: 'NUMBER STATUS: RESTRICTED',
+      cls: 'restricted',
+      line: null,
+      eliminated: 'THE NUMBER WAS ELIMINATED BY SIR INNOCENT TECH'
+    },
+    available: {
+      emoji: '🟢',
+      label: 'NUMBER STATUS: AVAILABLE',
+      cls: 'available',
+      line: 'This number is currently available according to the verification service.'
+    },
+    unverified: {
+      emoji: '🟡',
+      label: 'STATUS COULD NOT BE VERIFIED',
+      cls: 'unverified',
+      line: "Unable to reliably determine the number's WhatsApp status."
+    }
+  };
+
+  /* ---------- DOM refs ---------- */
+  const countrySelect  = document.getElementById('countrySelect');
+  const dialChip       = document.getElementById('dialChip');
+  const phoneInput     = document.getElementById('phoneInput');
+  const hint           = document.getElementById('hint');
+  const errorBox       = document.getElementById('errorBox');
+  const checkBtn       = document.getElementById('checkBtn');
+  const checkForm      = document.getElementById('checkForm');
+  const checkingPanel  = document.getElementById('checkingPanel');
+  const scanningNum    = document.getElementById('scanningNum');
+  const resultPanel    = document.getElementById('resultPanel');
+  const particlesWrap  = document.getElementById('particles');
+  const historyList    = document.getElementById('historyList');
+  const historyEmpty   = document.getElementById('historyEmpty');
+  const clearHistoryBtn= document.getElementById('clearHistoryBtn');
+
+  /* ---------- State ---------- */
+  let history = []; // session only — never persisted
+
+  /* ---------- Init: light drops ---------- */
+  (function initDrops() {
+    const wrap = document.querySelector('.lightning-bg');
+    if (!wrap) return;
+    const colors = ['gold', 'purple', 'green'];
+    const count = window.innerWidth < 480 ? 12 : 18;
+    for (let i = 0; i < count; i++) {
+      const d = document.createElement('span');
+      const c = colors[i % 3];
+      d.className = 'drop' + (c === 'purple' ? ' purple' : c === 'green' ? ' green' : '');
+      d.style.left = (Math.random() * 100) + '%';
+      d.style.height = (60 + Math.random() * 100) + 'px';
+      d.style.animationDelay = (Math.random() * 12) + 's';
+      d.style.animationDuration = (9 + Math.random() * 8) + 's';
+      wrap.appendChild(d);
+    }
+  })();
+
+  /* ---------- Init: country dropdown ---------- */
+  (function initCountries() {
+    COUNTRIES.forEach(function (c) {
+      const opt = document.createElement('option');
+      opt.value = c.code;
+      opt.textContent = c.flag + ' ' + c.name + ' (' + c.dial + ')';
+      if (c.code === 'KE') opt.selected = true;
+      countrySelect.appendChild(opt);
+    });
+    updateDialChip();
+  })();
+
+  function currentCountry() {
+    return COUNTRIES.find(function (c) { return c.code === countrySelect.value; }) || COUNTRIES[0];
+  }
+
+  function updateDialChip() {
+    const c = currentCountry();
+    dialChip.textContent = c.flag + ' ' + c.dial;
+    phoneInput.placeholder = 'Enter phone number';
+  }
+
+  /* ---------- Phone normalization ---------- */
+  function normalizePhone(rawInput, countryCode) {
+    const country = COUNTRIES.find(function (c) { return c.code === countryCode; });
+    if (!country) return { ok: false, reason: 'Unknown country' };
+    if (!rawInput) return { ok: false, reason: 'Enter a number' };
+
+    let v = String(rawInput).trim();
+    const hadPlus = v.charAt(0) === '+';
+    v = v.replace(/\D/g, '');
+    if (!v) return { ok: false, reason: 'Enter a valid number' };
+
+    let national = v;
+    let e164;
+
+    if (hadPlus) {
+      e164 = '+' + v;
+    } else {
+      national = national.replace(/^0+/, '');
+      const dialDigits = country.dial.replace('+', '');
+      if (national.indexOf(dialDigits) === 0 && national.length > dialDigits.length + 3) {
+        e164 = '+' + national;
+      } else {
+        e164 = country.dial + national;
+      }
+    }
+
+    const digits = e164.replace('+', '');
+    if (digits.length < 8 || digits.length > 15) {
+      return { ok: false, reason: 'Number length is invalid' };
+    }
+    if (!hadPlus && e164.indexOf(country.dial) !== 0) {
+      return { ok: false, reason: 'Expected ' + country.dial + ' prefix' };
+    }
+    return { ok: true, e164: e164 };
+  }
+
+  function maskPhone(e164) {
+    if (!e164 || e164.length < 6) return '••••';
+    const headLen = Math.min(5, e164.length - 4);
+    return e164.slice(0, headLen) + '•••' + e164.slice(-4);
+  }
+
+  /* ---------- Live validation ---------- */
+  function refreshValidation() {
+    const raw = phoneInput.value.trim();
+    if (!raw) { hint.textContent = ''; hint.classList.remove('ok'); checkBtn.disabled = true; return; }
+
+    const res = normalizePhone(raw, countrySelect.value);
+    if (res.ok) {
+      hint.textContent = '✓ Valid — will send as ' + res.e164;
+      hint.classList.add('ok');
+      checkBtn.disabled = false;
+    } else {
+      hint.textContent = res.reason || 'Keep typing…';
+      hint.classList.remove('ok');
+      checkBtn.disabled = true;
+    }
+  }
+
+  /* ---------- Events ---------- */
+  countrySelect.addEventListener('change', function () {
+    updateDialChip();
+    refreshValidation();
+  });
+  phoneInput.addEventListener('input', function () {
+    // keep digits, +, spaces only
+    phoneInput.value = phoneInput.value.replace(/[^\d+ ]/g, '');
+    refreshValidation();
+  });
+
+  checkForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    handleCheck();
+  });
+
+  /* ---------- Particles ---------- */
+  function spawnParticles() {
+    particlesWrap.innerHTML = '';
+    const colors = ['#F5C542', '#10B981', '#7C3AED'];
+    for (let i = 0; i < 14; i++) {
+      const p = document.createElement('span');
+      p.className = 'particle';
+      p.style.left = (Math.random() * 100) + '%';
+      p.style.top = (Math.random() * 100) + '%';
+      const c = colors[i % 3];
+      p.style.background = c;
+      p.style.boxShadow = '0 0 8px ' + c;
+      p.style.animationDelay = (i * 0.12) + 's';
+      particlesWrap.appendChild(p);
+    }
+  }
+
+  /* ---------- Handle check ---------- */
+  async function handleCheck() {
+    errorBox.classList.remove('show');
+    errorBox.textContent = '';
+
+    const norm = normalizePhone(phoneInput.value, countrySelect.value);
+    if (!norm.ok) {
+      errorBox.textContent = norm.reason || 'Invalid number';
+      errorBox.classList.add('show');
+      return;
+    }
+
+    // Show checking panel
+    checkForm.classList.add('hidden');
+    resultPanel.classList.add('hidden');
+    checkingPanel.classList.remove('hidden');
+    scanningNum.textContent = norm.e164;
+    spawnParticles();
+
+    const startedAt = Date.now();
+
+    let status = 'unverified';
+    let source = 'client-fallback';
+
+    try {
+      const res = await fetch('/api/check-number', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ phone: norm.e164, country: countrySelect.value })
+      });
+      if (res.ok) {
+        const data = await res.json();
+        if (data && ['available', 'restricted', 'unverified'].indexOf(data.status) !== -1) {
+          status = data.status;
+          source = data.source || 'provider';
+        }
+      }
+    } catch (err) {
+      // network error → keep unverified
+    }
+
+    // Ensure minimum scan duration for UX
+    const elapsed = Date.now() - startedAt;
+    const minDuration = 1600;
+    if (elapsed < minDuration) {
+      await new Promise(function (r) { setTimeout(r, minDuration - elapsed); });
+    }
+
+    // Record history entry
+    const entry = { phone: norm.e164, status: status, at: new Date().toISOString() };
+    history = [entry].concat(history).slice(0, 20);
+    renderHistory();
+
+    // Show result
+    checkingPanel.classList.add('hidden');
+    showResult(entry);
+    phoneInput.value = '';
+    refreshValidation();
+  }
+
+  /* ---------- Result panel ---------- */
+  function showResult(entry) {
+    const meta = STATUS_META[entry.status] || STATUS_META.unverified;
+
+    let html = '';
+    html += '<div class="emoji">' + meta.emoji + '</div>';
+    html += '<div class="label">' + meta.label + '</div>';
+
+    if (entry.status === 'restricted') {
+      html += '<div class="eliminated">' + meta.eliminated + '</div>';
+    }
+    if (meta.line) {
+      html += '<p class="line">' + meta.line + '</p>';
+    }
+
+    html += '<div class="meta">' + entry.phone + ' · ' + new Date(entry.at).toLocaleString() + '</div>';
+    html += '<div class="disclaimer">Status information is based on the authorized verification service.</div>';
+    html += '<button type="button" class="btn-secondary" id="resetBtn">Check another number</button>';
+
+    resultPanel.className = 'result ' + meta.cls;
+    resultPanel.innerHTML = html;
+    resultPanel.classList.remove('hidden');
+
+    document.getElementById('resetBtn').addEventListener('click', resetChecker);
+  }
+
+  function resetChecker() {
+    resultPanel.classList.add('hidden');
+    resultPanel.innerHTML = '';
+    checkForm.classList.remove('hidden');
+    checkBtn.disabled = phoneInput.value.trim() ? checkBtn.disabled : true;
+    refreshValidation();
+    phoneInput.focus();
+  }
+
+  /* ---------- History ---------- */
+  function renderHistory() {
+    if (history.length === 0) {
+      historyEmpty.classList.remove('hidden');
+      historyList.classList.add('hidden');
+      clearHistoryBtn.classList.add('hidden');
+      return;
+    }
+    historyEmpty.classList.add('hidden');
+    historyList.classList.remove('hidden');
+    clearHistoryBtn.classList.remove('hidden');
+
+    const ICONS = { restricted: '🔴', available: '🟢', unverified: '🟡' };
+    const LABELS = { restricted: 'Restricted', available: 'Available', unverified: 'Unverified' };
+
+    historyList.innerHTML = history.slice(0, 8).map(function (it) {
+      const icon = ICONS[it.status] || '🟡';
+      const label = LABELS[it.status] || 'Unverified';
+      const cls = it.status || 'unverified';
+      const time = new Date(it.at).toLocaleString();
+      return '<li>' +
+        '<div class="h-row">' +
+          '<span class="h-emoji">' + icon + '</span>' +
+          '<div>' +
+            '<div class="h-num">' + maskPhone(it.phone) + '</div>' +
+            '<div class="h-time">' + time + '</div>' +
+          '</div>' +
+        '</div>' +
+        '<span class="h-status ' + cls + '">' + label + '</span>' +
+      '</li>';
+    }).join('');
+  }
+
+  clearHistoryBtn.addEventListener('click', function () {
+    history = [];
+    renderHistory();
+  });
+
+  /* ---------- Bootstrap ---------- */
+  checkBtn.disabled = true;
+  renderHistory();
+})();
+</script>
+</body>
+</html>
